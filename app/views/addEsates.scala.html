@@ -1,0 +1,90 @@
+@()
+
+@main("HOME") {
+    <div class="container">
+        <form action="#">
+            <div class="heading-class">
+                ADD ESTATE DETAILS
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="estate_name">Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="estate_name" name="estate_name" placeholder="Estate name .." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="estate_length">Length</label>
+                </div>
+                <div class="col-75">
+                    <input type="number" min=10 id="estate_length" name="estate_length" placeholder="Length .." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="estate_breadth">Breadth</label>
+                </div>
+                <div class="col-75">
+                    <input type="number" min=10 id="estate_breadth" name="estate_breadth" placeholder="Breadth .. " required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="cost_per_feet">Cost Per Feet</label>
+                </div>
+                <div class="col-75">
+@*                    <input type="number" min=10 id="cost_per_feet" name="cost_per_feet" placeholder="Cost per feet .. " required>*@
+
+                    <input type="radio" id="less" name="cpf" value="less">
+                    <label for="less">< 50L</label>
+                    <input type="radio" id="between" name="cpf" value="between">
+                    <label for="between">50L - 1C</label>
+                    <input type="radio" id="more" name="cpf" value="more">
+                    <label for="more">>1C</label>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="estate_type">House Type</label>
+                </div>
+                <div class="col-75">
+                    <input type="checkbox" id="ht1" name="ht1" value="Independent">
+                    <label for="ht1"> Independent </label>
+                    <input type="checkbox" id="ht2" name="ht2" value="Duplex">
+                    <label for="ht2"> Duplex </label>
+                    <input type="checkbox" id="ht3" name="ht3" value="Normal">
+                    <label for="ht3"> Normal</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="estate_type">Type</label>
+                </div>
+                <div class="col-75">
+                    <select id="estate_type" name="estate_type">
+                        <option value="villa">Villa</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="flat">Flat</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="description">Description</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="description" name="description" placeholder="Write description.." style="height:200px"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit" onclick="validateFn()">
+            </div>
+        </form>
+    </div>
+}

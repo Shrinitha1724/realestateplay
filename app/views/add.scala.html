@@ -1,0 +1,28 @@
+@()
+
+@main("HOME") {
+<h1>SM REAL ESTATES  </h1>
+<div class="login-page">
+    <div class="form">
+
+
+    <form class="register-form" id="estate_typeform" >
+        <p><b>ADD ESTATE</b></p>
+        <input type="text" name="estate_name" id="estate_name" placeholder="Estate name"/>
+        <input type="text" id="estate_length"placeholder="Length"/>
+        <input type="text" id="estate_breadth" placeholder="Breadth"/>
+        <input type="text" id="cost_per_feet" placeholder="Cost per feet"/>
+        <label for="estate_type">Choose a type:</label>
+            <select name="estate_type" id="estate_type" form="estate_typeform">
+                <option value="apartment">Apartment</option>
+                <option value="villa">Villa</option>
+                <option value="flat">Flat</option>
+                <option value="others">Others</option>
+            </select>
+        <button>Add</button>
+    </form>
+
+    </div>
+</div>
+}
+

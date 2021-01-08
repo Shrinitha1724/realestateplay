@@ -1,0 +1,53 @@
+@import java.util
+@(users : util.ArrayList[User])
+@main("SM REAL ESTATES") {
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <div ng-app="myApp" ng-controller="myCtrl" style="height: 1000px">
+            <!-- just to make scrolling effect possible -->
+        <h2>Users</h2>
+
+        <table class=".user_table" style="margin-left: 780px; border: 2px solid aqua; padding: 10px 10px; background: #b3b3b3; font-size: 18px" >
+            <thead>
+                <tr>
+                    <th style="padding: 10px">Sr.No</th>
+                    <th style="padding: 10px">First Name</th>
+                    <th style="padding: 10px">Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            @for(u <- users) {
+                <tr style="font-size: 15px;">
+                    <td style="text-align: center;padding: 10px;font-size: 16px; color: aliceblue">@u.srno</td>
+                    <td style="text-align: center;padding: 10px;font-size: 16px;color: aliceblue">&nbsp;&nbsp;&nbsp;@u.user_name</td>
+                    <td style="text-align: center;padding: 10px;font-size: 16px;color: aliceblue">&nbsp;&nbsp;&nbsp;@u.user_pswd</td>
+                </tr>
+
+            }
+            </tbody>
+        </table>
+        <h3 class="delete-class" ng-click="myFunc1()">Add Estates</h3>
+        <h3 class="delete-class" ng-click="myFunc()">Delete</h3>
+
+@*        <input type="button" value="Add Estate" onclick="window.open('http://localhost:9000/addEstates')" />*@
+
+        <input id="shows" type="text" ng-show="showMe">
+        <input type="button" ng-show="showMe" value="Delete" onclick="window.open('http://localhost:9000/remove/')" />
+
+
+    </div>
+<script>
+    var app=angular.module('myApp',[]);
+    app.controller('myCtrl', function ($scope){
+        $scope.showMe = false;
+        $scope.myFunc = function (){
+            $scope.showMe=!$scope.showMe;
+        }
+        $scope.myFunc1 = function (){
+            window.open('http://localhost:9000/addEstates');
+        }
+    });
+</script>
+}
